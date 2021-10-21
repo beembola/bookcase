@@ -1,0 +1,10 @@
+body {
+  background-color: pink;
+  color: black;
+  padding: 40px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+}
+.App-title {
+    background-color: red;
+}
