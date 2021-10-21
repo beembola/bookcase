@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import booklist  from './models/books.json'
+import Book from "./component/Book";
+import {useState} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [books,setBook] =useState(booklist);
+  console.log(books[0].volumeInfo.title);
+  return books.map((book) => 
+   <Book title ={ book.volumeInfo.title}  
+      author ={ book.volumeInfo.authors[0]} 
+      amount={book.saleInfo.retailPrice?.amount} 
+      image ={book.volumeInfo.imageLinks.thumbnail} />);
+   
 }
 
 export default App;
